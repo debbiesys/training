@@ -1,0 +1,10 @@
+package com.fepoc.nextgen.ds;
+
+public class checkParm {
+private String useParmDate;
+private String parmOvrdProcDate;
+public checkParm (String str1, String str2) {
+	useParmDate = str1;
+	parmOvrdProcDate = str2;
+}
+}

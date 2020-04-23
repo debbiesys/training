@@ -1,0 +1,33 @@
+package com.pluralsight.repository;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.pluralsight.model.Customer;
+
+@Repository("CustomerRepository")
+public class HibernateCustomerRepositoryImpl implements CustomerRepository {
+
+	@Autowired
+	private Calendar cal;
+	
+	@Override
+	public List<Customer> findAll() {
+		List<Customer> customers = new ArrayList<>();
+		
+		Customer customer = new Customer();
+		
+		customer.setFirstname("Peter");
+		customer.setLastname("Sheu");
+		
+		System.out.println("cal: " + cal.getTime());
+		
+		customers.add(customer);
+		
+		return customers;
+	}
+}

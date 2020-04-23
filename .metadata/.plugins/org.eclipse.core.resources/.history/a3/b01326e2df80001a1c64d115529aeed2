@@ -1,0 +1,22 @@
+import org.springframework.context.*;
+import org.springframework.context.annotation.Profile;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+import com.pluralsight.service.CustomerService;
+@Profile(value = { "" })
+
+
+public class Application {
+	
+	 private static CustomerService service;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ApplicationContext appContext = new FileSystemXmlApplicationContext("applicationContext.xml");
+		
+		System.out.print(service.findAll().get(0).getFirstname());
+	}
+
+}
+
